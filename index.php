@@ -15,9 +15,10 @@ include("conn.php");
         <h1>Trip Submission Form for Park</h1>
         <h4>This form is get the Data For User that go to trip in Imbursement park</h4>
         <?php
-        if($Insert){
-            echo " <div style='color: green; font-weight: bold;'>Successfully Inserted!</div>";
-        }
+      if (isset($_SESSION['Insert'])) {
+        echo "<div style='color: green; font-weight: bold;'>" . $_SESSION['Insert'] . "</div>";
+        unset($_SESSION['Insert']); 
+    }
         ?>
         <div>
             <form method="POST" id="formsubmit" action="./conn.php">

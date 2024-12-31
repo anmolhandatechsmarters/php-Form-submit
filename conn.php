@@ -1,4 +1,5 @@
 <?php
+session_start();
 $Insert=false;
 $_SERVER="localhost";
 $_Username="anmol";
@@ -29,7 +30,7 @@ $sql="INSERT INTO praticeform (full_name,email,password,phone_number,full_addres
 
 
 if($conn->query($sql) === true){
-    $Insert=true;
+    $_SESSION['Insert'] = "Successfully Inserted!";
 header('Location:./index.php');
 }else{
     echo "not Inserted";
