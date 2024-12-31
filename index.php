@@ -19,6 +19,10 @@ include("conn.php");
         echo "<div style='color: green; font-weight: bold;'>" . $_SESSION['Insert'] . "</div>";
         unset($_SESSION['Insert']); 
     }
+    if(isset($_SESSION['NOTINSERT'])){
+        echo "<div style='color: red; font-weight: bold;'>" . $_SESSION['NOTINSERT'] . "</div>";
+        unset($_SESSION['NOTINSERT']);
+    }
         ?>
         <div>
             <form method="POST" id="formsubmit" action="./conn.php">

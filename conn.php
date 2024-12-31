@@ -17,7 +17,7 @@ if($conn){
 
 
 
-if(sizeof($_POST) > 0){
+if(sizeof($_POST) > 0 && isset($_POST['name'])){
 $full_name=$_POST['name'];
 $email=$_POST['email'];
 $password=$_POST['password'];
@@ -33,7 +33,8 @@ if($conn->query($sql) === true){
     $_SESSION['Insert'] = "Successfully Inserted!";
 header('Location:./index.php');
 }else{
-    echo "not Inserted";
+    // echo "not Inserted";
+    $_SESSION['NOTINSERT']="Some Error Occur";
 }
 $conn->close();
 
